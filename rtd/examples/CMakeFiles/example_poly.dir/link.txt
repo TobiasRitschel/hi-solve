@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/example_poly.dir/examples/example_poly.cpp.o  -o example_poly -Wl,-rpath,/home/tksr/dev/hi-solve/rtd ../libhi-solve.so 

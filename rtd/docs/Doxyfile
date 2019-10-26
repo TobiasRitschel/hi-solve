@@ -1,0 +1,12 @@
+PROJECT_NAME            = "hi-solve"
+PROJECT_NUMBER          = 1.0.0
+STRIP_FROM_PATH         = "/home/tksr/dev/hi-solve" \
+                          "/home/tksr/dev/hi-solve/rtd"
+INPUT                   = "/home/tksr/dev/hi-solve/src" \
+                          "/home/tksr/dev/hi-solve/include"
+INCLUDE_PATH            = "/home/tksr/dev/hi-solve/include"
+OUTPUT_DIRECTORY        = "/home/tksr/dev/hi-solve/rtd/docs"
+FILE_PATTERNS           = *.h \
+                          *.tpp \
+                          *.cpp
+RECURSIVE               = YES
