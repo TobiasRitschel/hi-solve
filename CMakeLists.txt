@@ -58,8 +58,8 @@ endif()
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
   # Doxygen configuration file in the build folder
-  set(DOXYGEN_CONFIG_FILE_IN    ${CMAKE_CURRENT_SOURCE_DIR}/doc/Doxyfile.in)
-  set(DOXYGEN_CONFIG_FILE_BUILD ${CMAKE_CURRENT_BINARY_DIR}/doc/Doxyfile)
+  set(DOXYGEN_CONFIG_FILE_IN    ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in)
+  set(DOXYGEN_CONFIG_FILE_BUILD ${CMAKE_CURRENT_BINARY_DIR}/docs/Doxyfile)
 
   # Copy the doxygen file into the build directory
   configure_file(

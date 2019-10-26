@@ -5,7 +5,7 @@ STRIP_FROM_PATH         = "@CMAKE_CURRENT_SOURCE_DIR@" \
 INPUT                   = "@CMAKE_CURRENT_SOURCE_DIR@/src" \
                           "@CMAKE_CURRENT_SOURCE_DIR@/include"
 INCLUDE_PATH            = "@CMAKE_CURRENT_SOURCE_DIR@/include"
-OUTPUT_DIRECTORY        = "@CMAKE_CURRENT_BINARY_DIR@/doc"
+OUTPUT_DIRECTORY        = "@CMAKE_CURRENT_BINARY_DIR@/docs"
 FILE_PATTERNS           = *.h \
                           *.tpp \
                           *.cpp
