@@ -1,0 +1,12 @@
+PROJECT_NAME            = "@CMAKE_PROJECT_NAME@"
+PROJECT_NUMBER          = @PROJECT_VERSION_MAJOR@.@PROJECT_VERSION_MINOR@.@PROJECT_VERSION_PATCH@
+STRIP_FROM_PATH         = "@CMAKE_CURRENT_SOURCE_DIR@" \
+                          "@CMAKE_CURRENT_BINARY_DIR@"
+INPUT                   = "@CMAKE_CURRENT_SOURCE_DIR@/src" \
+                          "@CMAKE_CURRENT_SOURCE_DIR@/include"
+INCLUDE_PATH            = "@CMAKE_CURRENT_SOURCE_DIR@/include"
+OUTPUT_DIRECTORY        = "@CMAKE_CURRENT_BINARY_DIR@/doc"
+FILE_PATTERNS           = *.h \
+                          *.tpp \
+                          *.cpp
+RECURSIVE               = YES
