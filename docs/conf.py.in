@@ -21,7 +21,7 @@ def configureDoxyfile(input_dir, output_dir):
   copyfile('requirements.txt.in', 'requirements.txt.py')
 
 # Minimum sphinx version
-needs_sphinx = '1.8.0'
+needs_sphinx = '2.0.1'
 
 # Set breathe as an extension
 extensions = [ "breathe" ]
