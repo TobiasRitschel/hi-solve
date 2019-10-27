@@ -2,17 +2,17 @@
 ## Introduction
 HI-SOLVE implements an iterative high-order numerical method for solving nonlinear algebraic equations in the form
 
-  f(x) = 0,
+  f(x) = 0.
   
-which uses higher order derivatives. The method is inspired by (and essentially an attempt at generalizing) the iterative methods for solving cubic equations of state described by Olivera-Fuentes (1993).
+The method is inspired by (and essentially an attempt at generalizing) the iterative methods for solving cubic equations of state described by Olivera-Fuentes (1993).
 
 The key idea is to truncate the terms in the Taylor expansion of f(x) and approximate the powers in the polynomial. As a consequence, the computation of the update in each iteration of numerical method also becomes iterative.
 
-## Installation
-This project uses CMake and the installation is standard:
+## Installation (Linux command line)
+This project uses CMake and the installation is standard. Open a terminal and issue the following commands (one by one).
 
 ```
-cd <path-to-hi-solve>     # open a terminal and go to the hi-solve directory
+cd <path-to-hi-solve>     # go to the hi-solve directory
 mkdir build               # create a new folder called build
 cd build                  # change the directory to the build folder
 cmake ..                  # create the build system
@@ -20,9 +20,18 @@ cmake --build .           # compile the code
 ```
 
 ### Test (optional)
-In order to test that the installation has been successful
+It is recommended that you run the unit tests after having compiled the code to confirm that the installation was successful. This is done by issuing the following command from the build folder.
+
+```
+cmake --build . --target test
+```
 
 ### Create documentation (optional)
+HI-SOLVE is documented using Doxygen. You can create the documentation (in both .pdf and .html) by issuing the following command from the build folder.
+
+```
+cmake --build . --target doc
+```
 
 # Copyright
 MIT License
