@@ -17,12 +17,11 @@ def configureDoxyfile(input_dir, output_dir):
     file.write(filedata)
 
   # Copy other configuration files
-  copyfile('conf.py.in',          'conf.py')
   copyfile('index.rst.in',        'index.rst.py')
   copyfile('requirements.txt.in', 'requirements.txt.py')
 
 # Minimum sphinx version
-needs_sphinx = '2.0.1'
+needs_sphinx = '1.8.0'
 
 # Set breathe as an extension
 extensions = [ "breathe" ]
