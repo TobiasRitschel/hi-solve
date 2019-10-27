@@ -1,6 +1,11 @@
-import subprocess, os
+# Minimum sphinx version
+needs_sphinx = '2.0.1'
 
-read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
+# Set breathe as an extension
+extensions = [ "breathe" ]
 
-if read_the_docs_build:
-    subprocess.call('cd ../docs; doxygen -g Doxyfile.in', shell=True)
+# Breathe configuration
+breathe_default_project = "@CMAKE_PROJECT_NAME@"
+
+# Use the ReadTheDocs theme
+html_theme = "sphinx_rtd_theme"

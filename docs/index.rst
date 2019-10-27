@@ -1,0 +1,5 @@
+Docs
+====
+ 
+.. doxygenclass:: HiSolve
+   :members:

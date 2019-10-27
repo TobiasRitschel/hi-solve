@@ -10,3 +10,5 @@ FILE_PATTERNS           = *.h \
                           *.tpp \
                           *.cpp
 RECURSIVE               = YES
+
+GENERATE_XML = YES

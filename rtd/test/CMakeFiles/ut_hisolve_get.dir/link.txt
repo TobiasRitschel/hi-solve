@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/ut_hisolve_get.dir/unittests/ut_hisolve_get.cpp.o  -o ut_hisolve_get -Wl,-rpath,/home/tksr/dev/hi-solve/rtd ../libhi-solve.so 
