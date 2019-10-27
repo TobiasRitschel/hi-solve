@@ -1,6 +1,6 @@
-# HI-SOLVE
+# Hi-solve
 ## Introduction
-HI-SOLVE implements an iterative high-order numerical method for solving nonlinear algebraic equations in the form
+Hi-solve implements an iterative high-order numerical method for solving nonlinear algebraic equations in the form
 
   f(x) = 0.
   
@@ -27,7 +27,7 @@ cmake --build . --target test
 ```
 
 ### Create documentation (optional)
-HI-SOLVE is documented using Doxygen. You can create the documentation (in both .pdf and .html) by issuing the following command from the build folder.
+Hi-solve is documented using Doxygen. You can create the documentation (in both .pdf and .html) by issuing the following command from the build folder.
 
 ```
 cmake --build . --target doc
@@ -36,7 +36,7 @@ cmake --build . --target doc
 ## Examples
 The code is shipped with an example of finding roots of a polynomial (where it is easy to derive closed expressions of derivatives of arbitrary order).
 
-The example is automatically compiled when installing HI-SOLVE following the above steps. The source code for the example is located in hi-solve/examples/examples/example_poly.cpp, and the executable (after installation) is located in hi-solve/build/examples/examply_poly and can be run by issuing the following command from the build folder.
+The example is automatically compiled when installing Hi-solve following the above steps. The source code for the example is located in hi-solve/examples/examples/example_poly.cpp, and the executable (after installation) is located in hi-solve/build/examples/examply_poly and can be run by issuing the following command from the build folder.
 
 ```
 ./examples/example_poly
