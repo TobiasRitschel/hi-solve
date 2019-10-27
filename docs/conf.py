@@ -1,9 +1,6 @@
 # Needed to call Doxygen (on ReadTheDocs server)
 import subprocess, os
 
-# Needed to copy files
-from shutil import copyfile
-
 # Function for processing Doxygen.in configuration file and other configuration files
 def configureDoxyfile(input_dir, output_dir):
   # Process Doxyfile.in
@@ -15,10 +12,6 @@ def configureDoxyfile(input_dir, output_dir):
 
   with open('Doxyfile', 'w') as file:
     file.write(filedata)
-
-  # Copy other configuration files
-  copyfile('index.rst.in',        'index.rst.py')
-  copyfile('requirements.txt.in', 'requirements.txt.py')
 
 # Minimum sphinx version
 needs_sphinx = '1.8.0'
