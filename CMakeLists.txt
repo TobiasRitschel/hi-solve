@@ -80,47 +80,48 @@ if(DOXYGEN_FOUND)
 
   # Add doc as a target
   add_custom_target(doc
-    COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_CONFIG_FILE_BUILD}
+    COMMAND
+    ${DOXYGEN_EXECUTABLE}
+    ${DOXYGEN_CONFIG_FILE_BUILD}
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     COMMENT "Generating documentation using Doxygen"
     VERBATIM)
 
-        # Specify that the sphinx package is required
-        find_package(Sphinx REQUIRED)
-        if(SPHINX_FOUND)
-          # Sphinx configuration files
-          set(SPHINX_CONFIG_FILE_IN    ${DOCS_INPUT_DIR}/conf.py)
-          set(SPHINX_CONFIG_FILE_BUILD ${DOCS_OUTPUT_DIR}/conf.py)
+  # Specify that the sphinx package is required
+  find_package(Sphinx REQUIRED)
+  if(SPHINX_FOUND)
+    # Copy the conf.py file into the build directory
+    configure_file(
+      ${DOCS_INPUT_DIR}/conf.py.in
+      ${DOCS_OUTPUT_DIR}/conf.py
+      @ONLY)
+    message("-- Creating ${DOCS_OUTPUT_DIR}/conf.py from ${DOCS_INPUT_DIR}/conf.py.in")
 
-          # Copy the conf.py file into the build directory
-          configure_file(
-            ${SPHINX_CONFIG_FILE_IN}
-            ${SPHINX_CONFIG_FILE_BUILD}
-            @ONLY)
-          message("-- Creating ${SPHINX_CONFIG_FILE_BUILD} from ${SPHINX_CONFIG_FILE_IN}")
+    # Copy other configuration files
+    configure_file(
+      ${DOCS_INPUT_DIR}/index.rst.in
+      ${DOCS_OUTPUT_DIR}/index.rst)
+    message("-- Copying ${DOCS_INPUT_DIR}/index.rst.in to ${DOCS_OUTPUT_DIR}/index.rst")
 
-          # Copy other configuration files
-          configure_file(
-            ${DOCS_INPUT_DIR}/index.rst
-            ${DOCS_OUTPUT_DIR}/index.rst)
-          message("-- Copying ${DOCS_INPUT_DIR}/index.rst to ${DOCS_OUTPUT_DIR}/index.rst")
+    configure_file(
+      ${DOCS_INPUT_DIR}/requirements.txt.in
+      ${DOCS_OUTPUT_DIR}/requirements.txt)
+    message("-- Copying ${DOCS_INPUT_DIR}/requirements.txt.in to ${DOCS_OUTPUT_DIR}/requirements.txt")
 
-          configure_file(
-            ${DOCS_INPUT_DIR}/requirements.txt
-            ${DOCS_OUTPUT_DIR}/requirements.txt)
-          message("-- Copying ${DOCS_INPUT_DIR}/requirements.txt to ${DOCS_OUTPUT_DIR}/requirements.txt")
+    # Add sphinx target
+    add_custom_target(Sphinx
+      COMMAND
+      ${SPHINX_EXECUTABLE} -b html
+      ${DOCS_OUTPUT_DIR} ${DOCS_OUTPUT_DIR}/sphinx
+      -Dbreathe_projects.${CMAKE_PROJECT_NAME}=${DOCS_OUTPUT_DIR}/xml
+      WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+      COMMENT "Generating documentation using Sphinx")
 
-          # Add sphinx target
-          add_custom_target(Sphinx ALL
-            COMMAND
-            ${SPHINX_EXECUTABLE} -b html
-            ${DOCS_OUTPUT_DIR} ${DOCS_OUTPUT_DIR}/sphinx
-            -Dbreathe_projects.${CMAKE_PROJECT_NAME}=${DOCS_OUTPUT_DIR}/xml
-            WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-            COMMENT "Generating documentation with Sphinx")
-        else()
-          message("Sphinx is required in order to generate the documentation for ReadTheDocs")
-        endif()
+    # The Sphinx target depends on the doc target (because of the Doxygen XML files)
+    add_dependencies(Sphinx doc)
+  else()
+    message("Sphinx is required in order to generate the documentation for ReadTheDocs")
+  endif()
 else()
   message("Doxygen is required in order to generate the documentation")
 endif()
