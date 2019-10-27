@@ -66,4 +66,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Bibliography
-C. Olivera-Fuentes, 1993. The optimal solution of cubic equations of state, Latin American Applied Research 23, page 243--256. [Link](https://www.researchgate.net/publication/233529753_THE_OPTIMAL_SOLUTION_OF_CUBIC_EQUATIONS_OF_STATE), cached: October 27th, 2019.
+C. Olivera-Fuentes, 1993. The optimal solution of cubic equations of state, Latin American Applied Research 23, page 243-256. [Link](https://www.researchgate.net/publication/233529753_THE_OPTIMAL_SOLUTION_OF_CUBIC_EQUATIONS_OF_STATE), cached: October 27th, 2019.
