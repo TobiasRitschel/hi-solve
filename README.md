@@ -4,7 +4,7 @@ HI-SOLVE implements an iterative high-order numerical method for solving nonline
 
   f(x) = 0.
   
-The method is inspired by (and essentially an attempt at generalizing) the iterative methods for solving cubic equations of state described by Olivera-Fuentes (1993).
+The method is inspired by (and essentially an attempt at generalizing) the iterative methods for solving cubic equations of state summarized in the technical report by Olivera-Fuentes (1993).
 
 The key idea is to truncate the terms in the Taylor expansion of f(x) and approximate the powers in the polynomial. As a consequence, the computation of the update in each iteration of numerical method also becomes iterative.
 
@@ -31,6 +31,15 @@ HI-SOLVE is documented using Doxygen. You can create the documentation (in both 
 
 ```
 cmake --build . --target doc
+```
+
+## Examples
+The code is shipped with an example of finding roots of a polynomial (where it is easy to derive closed expressions of derivatives of arbitrary order).
+
+The example is automatically compiled when installing HI-SOLVE following the above steps. The source code for the example is located in hi-solve/examples/examples/example_poly.cpp, and the executable (after installation) is located in hi-solve/build/examples/examply_poly and can be run by issuing the following command from the build folder.
+
+```
+./examples/example_poly
 ```
 
 ## Copyright
