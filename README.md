@@ -12,18 +12,12 @@ The key idea is to truncate the terms in the Taylor expansion of f(x) and approx
 This project uses CMake and the installation is standard:
 
 ```
-cd <path-to-hi-solve> # open a terminal and go to the hi-solve directory
-mkdir build           # create a new folder called build
-cd build              # change the directory to the build folder
-cmake ..              # create the build system
-cmake --build .       # compile the code
+cd <path-to-hi-solve>     # open a terminal and go to the hi-solve directory
+mkdir build               # create a new folder called build
+cd build                  # change the directory to the build folder
+cmake ..                  # create the build system
+cmake --build .           # compile the code
 ```
-
-1. open a terminal and go to the hi-solve directory (`cd <path-to-hi-solve>`)
-2. create a new folder called build (`mkdir build`)
-3. change the directory to the build folder (`cd build`)
-4. create the build system (`cmake ..`)
-5. compile the code (`cmake --build .`)
 
 ### Test (optional)
 In order to test that the installation has been successful
