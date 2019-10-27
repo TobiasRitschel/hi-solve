@@ -11,13 +11,13 @@ The key idea is to truncate the terms in the Taylor expansion of f(x) and approx
 ## Installation
 This project uses CMake and the installation is standard:
 
-`
+```
 cd <path-to-hi-solve> # open a terminal and go to the hi-solve directory
 mkdir build           # create a new folder called build
 cd build              # change the directory to the build folder
 cmake ..              # create the build system
 cmake --build .       # compile the code
-`
+```
 
 1. open a terminal and go to the hi-solve directory (`cd <path-to-hi-solve>`)
 2. create a new folder called build (`mkdir build`)
