@@ -32,9 +32,8 @@ breathe_projects = {};
 
 # If we're on the ReadTheDocs server, process the Doxygen configuration file etc.
 if read_the_docs_build:
-  os.chdir('..')
-  input_dir = './docs'
-  output_dir = './build'
+  input_dir = '..'
+  output_dir = '../build'
   configureDoxyfile(input_dir, output_dir)
   subprocess.call('doxygen ./docs/Doxyfile', shell=True)
   breathe_projects['hi-solve'] = output_dir + '/xml'
