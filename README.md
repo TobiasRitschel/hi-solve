@@ -33,7 +33,7 @@ HI-SOLVE is documented using Doxygen. You can create the documentation (in both 
 cmake --build . --target doc
 ```
 
-# Copyright
+## Copyright
 MIT License
 
 Copyright (c) 2019 Tobias Kasper Skovborg Ritschel
