@@ -36,4 +36,4 @@ if read_the_docs_build:
   output_dir = '.'
   configureDoxyfile(input_dir, output_dir)
   subprocess.call('doxygen', shell=True)
-  breathe_projects['hi-solve'] = output_dir + '/xml'
+  breathe_projects['hi-solve'] = output_dir + '/docs/xml'
